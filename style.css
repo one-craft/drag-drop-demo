@@ -3,9 +3,20 @@
 }
 
 .trash {
-  width: 50px;
+  padding: 5px;
+  margin-bottom: 10px;
+  width: 200px;
+  border: 1px solid #000;
+  text-align: center;
+  cursor: pointer;
 }
 
 .ashcan-wrap {
   height: 200px;
+}
+
+.ashcan {
+  display: inline-block;
+  padding: 30px;
+  border: 1px solid #000;
 }
