@@ -1,19 +1,21 @@
 .content-wrap {
-  height: 200px;
+  width: 250px;
 }
 
 .trash {
   padding: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   width: 200px;
+  background: lightblue;
   border: 1px solid #000;
+  border-radius: 5px;
   text-align: center;
   cursor: pointer;
   user-select: none;
 }
 
 .ashcan-wrap {
-  height: 200px;
+  align-self: center;
 }
 
 .ashcan {

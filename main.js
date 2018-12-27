@@ -21,6 +21,10 @@
  * WARNING: dragenter 和 dragover 事件的默认行为是拒绝接受任何被拖放的元素。
  *          因此，我们必须阻止浏览器这种默认行为。
  *          e.preventDefault();
+ * 
+ * TODO:
+ * 垃圾内部可以排序
+ * 在排序的过程中，动画效果
  */
 
 let dragElement;
