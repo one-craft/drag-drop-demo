@@ -30,6 +30,8 @@
 let dragElement;
 const contentWrap = document.querySelector('.content-wrap');
 const msg = document.querySelector('.msg');
+const trashList = document.querySelectorAll('.trash');
+const ashcan = document.querySelector('.ashcan');
 
 const TRASH_EVENT = {
   dragstart(event) {
@@ -71,8 +73,26 @@ const ASHCAN_EVENT = {
   }
 }
 
+const CONTENT_EVENT = {
+  dragenter(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    console.log('----dragenter----', event.target);
+  },
+  dragover(event) {
+    event.preventDefault();
+    // console.log('dragover', event);
+  },
+  dragleave(event) {
+    console.log('----dragleave----', event.target);
+  },
+  drop(event) {
+    event.preventDefault();
+    console.log('----drop----');
+  }
+}
+
 // 为每个垃圾添加拖拽事件
-const trashList = document.querySelectorAll('.trash');
 Array.prototype.forEach.call(trashList, element => {
   Object.keys(TRASH_EVENT).forEach(key => {
     element.addEventListener(key, TRASH_EVENT[key]);
@@ -80,7 +100,10 @@ Array.prototype.forEach.call(trashList, element => {
 });
 
 // 为垃圾桶添加拖拽事件
-const ashcan = document.querySelector('.ashcan');
 Object.keys(ASHCAN_EVENT).forEach(key => {
   ashcan.addEventListener(key, ASHCAN_EVENT[key]);
+})
+
+Object.keys(CONTENT_EVENT).forEach(key => {
+  contentWrap.addEventListener(key, CONTENT_EVENT[key]);
 })
